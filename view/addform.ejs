@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docform</title>
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/css/single.css">
+    <link rel="stylesheet" href="/css/fontAwesome.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <br>
+    <div class="login">
+        <a class="button" href="/">Home</a>
+    </div>
+    <div class="container add1">
+        <h1><%=data[0].title%></h1>
+    </div>
+    <!-- The above form looks like this -->
+    <div class="container">
+        <form>
+            <div class="row">
+                <div class="six columns">
+                    <label ><%=data[0].header1%></label>
+                    <input class="u-full-width" type="text" placeholder="<%=data[0].header1%>" >
+                </div>
+                <div class="six columns">
+                    <label ><%=data[0].header2%></label>
+                    <input class="u-full-width" type="text" placeholder="<%=data[0].header2%>" >
+                </div>
+            </div>
+            
+
+            <label ><%=data[0].header3%></label>
+            <textarea class="u-full-width" placeholder="<%=data[0].header3%>" ></textarea>
+
+            <label>
+                <input  type="file" accept="image/jpeg,image/png">
+                <span class="label-body">Add only jpeg/png files</span>
+
+            </label>
+            <input class="button-primary" type="submit" value="Submit">
+        </form>
+    </div>
+    <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
+
+    <!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
+</body>
+
+</html>
