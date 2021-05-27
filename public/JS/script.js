@@ -17,20 +17,20 @@ $(document).ready(() => {
 
 
     $("#button1").click(() => {
+        $("#button1").click('disable', true)
         if (em.value.trim() == "" || pas.value.trim() == "") {
+            alert(em.value.trim() == "" ? "Enter email" : 'Enter Password');
             em.style.border = em.value.trim() == "" ? "2px solid red" : '';
             pas.style.border = pas.value.trim() == "" ? "2px solid red" : '';
-            alert(em.value.trim() == "" ? "Enter email" : 'Enter Password');
             return false;
         }
 
         else if (regexp.test(em.value) == false) {
-            em.style.border = "2px solid red";
             alert("INVALID E-MAIL!!");
+            em.style.border = "2px solid red";
             return false;
 
         }
-
         else {
             Swal.fire(
                 'Success!!',
@@ -40,6 +40,8 @@ $(document).ready(() => {
                 window.location.replace("/");
             });
         }
+        $("#button1").click('disable', false)
+
 
     });
     // ------------------------------------sign up validation---------------------------------------//
