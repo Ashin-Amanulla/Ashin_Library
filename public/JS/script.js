@@ -35,7 +35,7 @@ $(document).ready(() => {
            Swal.fire({
                 icon: 'error',
                 title: 'Invalid Email !',
-                text: 'Ex: axxxx.gmail.com',
+                text: 'Ex: axxxx@gmail.com',
             });
             em.style.border = "2px solid red";
             $("#button1").prop('disabled', false)
@@ -84,7 +84,7 @@ $(document).ready(() => {
             Swal.fire({
                 icon: 'error',
                 title: 'Invalid Email !',
-                text: 'Ex: axxxx.gmail.com',
+                text: 'Ex: axxxx@gmail.com',
             });
             return false;
         }
