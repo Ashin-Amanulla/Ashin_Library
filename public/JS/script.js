@@ -19,7 +19,11 @@ $(document).ready(() => {
     $("#button1").click(() => {
         $("#button1").prop('disabled', true)
         if (em.value.trim() == "" || pas.value.trim() == "") {
-            alert(em.value.trim() == "" ? "Enter email" : 'Enter Password');
+            Swal.fire(
+                'Success!!',
+                'Welcome Admin!',
+                'success'
+            );
             em.style.border = em.value.trim() == "" ? "2px solid red" : '';
             pas.style.border = pas.value.trim() == "" ? "2px solid red" : '';
         $("#button1").prop('disabled', false)
