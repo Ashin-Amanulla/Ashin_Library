@@ -17,17 +17,21 @@ $(document).ready(() => {
 
 
     $("#button1").click(() => {
-        $("#button1").click('disable', true)
+        $("#button1").prop('disabled', true)
         if (em.value.trim() == "" || pas.value.trim() == "") {
             alert(em.value.trim() == "" ? "Enter email" : 'Enter Password');
             em.style.border = em.value.trim() == "" ? "2px solid red" : '';
             pas.style.border = pas.value.trim() == "" ? "2px solid red" : '';
+        $("#button1").prop('disabled', false)
+
             return false;
         }
 
         else if (regexp.test(em.value) == false) {
             alert("INVALID E-MAIL!!");
             em.style.border = "2px solid red";
+        $("#button1").prop('disabled', false)
+
             return false;
 
         }
@@ -40,7 +44,6 @@ $(document).ready(() => {
                 window.location.replace("/");
             });
         }
-        $("#button1").click('disable', false)
 
 
     });
