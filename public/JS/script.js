@@ -19,14 +19,14 @@ $(document).ready(() => {
     $("#button1").click(() => {
         $("#button1").prop('disabled', true)
         if (em.value.trim() == "" || pas.value.trim() == "") {
-            Swal.fire(
-                'Success!!',
-                'Welcome Admin!',
-                'success'
-            );
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Enter details',
+            });
             em.style.border = em.value.trim() == "" ? "2px solid red" : '';
             pas.style.border = pas.value.trim() == "" ? "2px solid red" : '';
-        $("#button1").prop('disabled', false)
+            $("#button1").prop('disabled', false)
 
             return false;
         }
@@ -34,7 +34,7 @@ $(document).ready(() => {
         else if (regexp.test(em.value) == false) {
             alert("INVALID E-MAIL!!");
             em.style.border = "2px solid red";
-        $("#button1").prop('disabled', false)
+            $("#button1").prop('disabled', false)
 
             return false;
 
@@ -58,7 +58,7 @@ $(document).ready(() => {
     var email = document.getElementById("em2");
     var user = document.getElementById("user1");
 
-    console.log(pass1,pass2,email,user);
+    console.log(pass1, pass2, email, user);
 
     $("#button2").click(() => {
         if (pass1.value.trim() == "" || pass2.value.trim() == "" || email.value.trim() == "" || user.value.trim() == "") {
