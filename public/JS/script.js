@@ -17,7 +17,6 @@ $(document).ready(() => {
 
 
     $("#button1").click(() => {
-        $("#button1").prop('disabled', true)
         if (em.value.trim() == "" || pas.value.trim() == "") {
             Swal.fire({
                 icon: 'error',
@@ -26,19 +25,17 @@ $(document).ready(() => {
             });
             em.style.border = em.value.trim() == "" ? "2px solid red" : '';
             pas.style.border = pas.value.trim() == "" ? "2px solid red" : '';
-            $("#button1").prop('disabled', false)
 
             return false;
         }
 
         else if (regexp.test(em.value) == false) {
-           Swal.fire({
+            Swal.fire({
                 icon: 'error',
                 title: 'Invalid Email !',
                 text: 'Ex: axxxx@gmail.com',
             });
             em.style.border = "2px solid red";
-            $("#button1").prop('disabled', false)
 
             return false;
 
@@ -90,7 +87,11 @@ $(document).ready(() => {
         }
 
         else if (!new RegExp(regex[0]).test(pass1.value) || !new RegExp(regex[1]).test(pass1.value) || !new RegExp(regex[2]).test(pass1.value)) {
-            alert("Password must contain atleast one uppercase, one lower case and one number");
+            Swal.fire({
+                icon: 'error',
+                title: 'Password must contain atleast one uppercase, one lower case and one number',
+                text: 'Please enter again',
+            });
             return false;
         }
         else if (pass1.value.trim() != pass2.value.trim()) {
