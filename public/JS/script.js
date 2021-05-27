@@ -76,12 +76,22 @@ $(document).ready(() => {
             });
             return false;
         }
+
         else if (regexp.test(email.value) == false) {
             email.style.border = "2px solid red";
             Swal.fire({
                 icon: 'error',
                 title: 'Invalid Email !',
-                text: 'Ex: axxxx@gmail.com',
+                text: 'Ex: axxxx@gmail.com , byyyy@gmail.co.in',
+            });
+            return false;
+        }
+
+        else if (user.value.length < 8) {
+            user.style.border = "2px solid red";
+            Swal.fire({
+                icon: 'error',
+                title: 'User-name must have atleast 8 characters !',
             });
             return false;
         }
