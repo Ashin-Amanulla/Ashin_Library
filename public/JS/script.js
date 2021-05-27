@@ -22,7 +22,7 @@ $(document).ready(() => {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Enter details',
+                text: 'Please enter details',
             });
             em.style.border = em.value.trim() == "" ? "2px solid red" : '';
             pas.style.border = pas.value.trim() == "" ? "2px solid red" : '';
@@ -32,7 +32,11 @@ $(document).ready(() => {
         }
 
         else if (regexp.test(em.value) == false) {
-            alert("INVALID E-MAIL!!");
+           Swal.fire({
+                icon: 'error',
+                title: 'Invalid Email !',
+                text: 'Ex: axxxx.gmail.com',
+            });
             em.style.border = "2px solid red";
             $("#button1").prop('disabled', false)
 
@@ -68,12 +72,20 @@ $(document).ready(() => {
             email.style.border = email.value.trim() == "" ? "2px solid red" : '';
             user.style.border = user.value.trim() == "" ? "2px solid red" : '';
 
-            alert("Fields not filled");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Please fill all fields',
+            });
             return false;
         }
         else if (regexp.test(email.value) == false) {
             email.style.border = "2px solid red";
-            alert("INVALID E-MAIL!!");
+            Swal.fire({
+                icon: 'error',
+                title: 'Invalid Email !',
+                text: 'Ex: axxxx.gmail.com',
+            });
             return false;
         }
 
@@ -82,7 +94,11 @@ $(document).ready(() => {
             return false;
         }
         else if (pass1.value.trim() != pass2.value.trim()) {
-            alert("Passwords doesnt match");
+            Swal.fire({
+                icon: 'error',
+                title: 'Passwords doesnt match!',
+                text: 'Please check again',
+            });
             pass1.style.border = "2px solid red";
             pass2.style.border = "2px solid red";
             return false;
