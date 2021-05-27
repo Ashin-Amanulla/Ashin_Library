@@ -40,6 +40,8 @@ a {
   position: absolute;
   padding: 90px 70px 50px 70px;
   background: rgb(20 21 19 / 80%);
+  border-radius: 16px;
+  box-shadow: inset 0 0 10px #000000
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm {

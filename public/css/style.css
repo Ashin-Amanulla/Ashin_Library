@@ -184,6 +184,7 @@ h5 {
   margin: 20px 20px;
   object-fit: cover;
   border-radius: 10px;
+  box-shadow:         3px 3px 5px 6px rgb(150, 149, 149);
 
 }
 .col,
