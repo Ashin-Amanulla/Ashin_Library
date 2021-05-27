@@ -31,7 +31,7 @@ $(document).ready(() => {
 
         else if (regexp.test(em.value) == false) {
             Swal.fire({
-                icon: 'error',
+                icon: 'warning',
                 title: 'Invalid Email !',
                 text: 'Ex: axxxx@gmail.com',
             });
@@ -90,7 +90,7 @@ $(document).ready(() => {
         else if (user.value.length < 8) {
             user.style.border = "2px solid red";
             Swal.fire({
-                icon: 'error',
+                icon: 'warning',
                 title: 'User-name must have atleast 8 characters !',
             });
             return false;
@@ -98,7 +98,7 @@ $(document).ready(() => {
 
         else if (!new RegExp(regex[0]).test(pass1.value) || !new RegExp(regex[1]).test(pass1.value) || !new RegExp(regex[2]).test(pass1.value)) {
             Swal.fire({
-                icon: 'error',
+                icon: 'warning',
                 title: 'Password must contain atleast one uppercase, one lower case and one number',
                 text: 'Please enter again',
             });
