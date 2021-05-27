@@ -160,7 +160,12 @@
   box-shadow:         3px 3px 5px 6px rgb(150, 149, 149);}
 
   .textshadow{
-    text-shadow: #5d4444bf 4px 4px 10px;
+    text-shadow: #aaa4a4bf 2px 2px 8px;
+    letter-spacing: 2px;
     ;
   }
-  
+  .titleshadow{
+    font-size: xx-large;
+    
+    font-weight:500;
+  }

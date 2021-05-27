@@ -172,9 +172,9 @@ h5 {
   flex-direction: row;
 }
 .b> a{
-  color: #8f1515;
+  color: #030303;
   text-decoration: none;
-  
+  font-weight: 600;
 
 }
 
@@ -229,6 +229,7 @@ h5 {
   overflow: hidden;
   margin-top: 50px;
   margin-bottom: 50px;
+  
 }
 
 .search-box {
@@ -248,6 +249,7 @@ h5 {
   box-sizing: border-box;
   border-radius: 50px;
   transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+  box-shadow: 6px 6px 12px black;
 }
 .search-box input[type="text"]:focus {
   outline: none;
