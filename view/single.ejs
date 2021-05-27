@@ -31,7 +31,7 @@
     <div class="section hero">
         <div class="container">
             <div class="row">
-                <div class="one-half column col-6">
+                <div class="one-half column col-6 textshadow">
                     <h4 class="">
                         <%=data.title%>
                     </h4>
@@ -48,6 +48,18 @@
                             <li>Published Date : <%=data.publishedDate%>
                             </li>
                         </ul>
+
+                        <div class="column">
+                            <div class="one-third row value">
+                                <a class="button btn1" href="#">Add to List</a>
+                            </div>
+                            <div class="one-third row value">
+                                <a class="button btn1" href="#">Read</a>
+                            </div>
+                            <div class="one-third row value">
+                                <a class="button btn1" href="#">Listen</a>
+                            </div>
+                        </div>
                         <% } else { %>
                             <ul>
                                 <li>Nationality : <%=data.country%>
@@ -57,19 +69,21 @@
                                 <li>Famous works : <%=data.FamousWorks%>
                                 </li>
                             </ul>
+
+                            <div class="column">
+                                <div class="one-third row value">
+                                    <a class="button btn1" href="#">Wiki</a>
+                                </div>
+                                <div class="one-third row value">
+                                    <a class="button btn1" href="#">Images</a>
+                                </div>
+                                <div class="one-third row value">
+                                    <a class="button btn1" href="#">Books</a>
+                                </div>
+                            </div>
                             <% } %>
 
-                                <div class="column">
-                                    <div class="one-third row value">
-                                        <a class="button btn1" href="#">Add to List</a>
-                                    </div>
-                                    <div class="one-third row value">
-                                        <a class="button btn1" href="#">Read</a>
-                                    </div>
-                                    <div class="one-third row value">
-                                        <a class="button btn1" href="#">Listen</a>
-                                    </div>
-                                </div>
+                              
                 </div>
 
                 <div class="one-half column phones col-6">
@@ -82,7 +96,7 @@
 
 
     <div class="section get-help">
-        <div class="container">
+        <div class="container textshadow">
             <h3 class="section-heading">About</h3>
             <p class="section-description">
                 <%=data.about%>

@@ -17,6 +17,10 @@
   margin-top: 5px;
 
 }
+.textshadow{
+  text-shadow: #5d4444bf 5px 5px 12px;
+  ;
+}
 /* Shared
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button {
