@@ -125,7 +125,52 @@ $(document).ready(() => {
             });
         }
     });
-    
+
+    var addtitle = document.getElementById("addtitle");
+    var addbook = document.getElementById("addbook");
+    var addtext = document.getElementById("addtext");
+    var addfile = document.getElementById("addfile");
+
+
+    $("#addsubmit").click((event) => {
+        if (addtitle.value.trim() == "" || addbook.value.trim() == "" || addtext.value.trim() == "" || addfile.value.trim() == "") {
+
+            addtitle.style.border = addtitle.value.trim() == "" ? "2px solid red" : '';
+            addbook.style.border = addbook.value.trim() == "" ? "2px solid red" : '';
+            addtext.style.border = addtext.value.trim() == "" ? "2px solid red" : '';
+            addfile.style.border = addfile.value.trim() == "" ? "2px solid red" : '';
+
+
+            Swal.fire({
+                icon: 'warning',
+                title: 'Oops...',
+                text: 'Please fill all fields',
+            });
+            return false;
+        }
+        else {
+            Swal.fire({
+                icon: 'question',
+                title: 'Do you want to save the details?',
+                showDenyButton: true,
+                showCancelButton: false,
+                confirmButtonText: `Yes`,
+                denyButtonText: `Don't save`,
+
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('Successfully added !!!', '', 'success')
+                    .then(function(){ 
+                        location.reload();
+                        });
+
+                } else if (result.isDenied) {
+                    Swal.fire('Changes are not saved', '', 'error')
+                    return false;
+                }
+            })
+        }
+    });
 });
 
 

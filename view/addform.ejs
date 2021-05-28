@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=data[0].title%></title>
+    <title>
+        <%=data[0].title%>
+    </title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
@@ -15,6 +18,8 @@
     <link rel="stylesheet" href="/css/font-awesome.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -23,37 +28,44 @@
         <a class="button" href="/">Home</a>
     </div>
     <div class="container add1">
-        <h1><%=data[0].title%></h1>
+        <h1>
+            <%=data[0].title%>
+        </h1>
     </div>
-    <!-- The above form looks like this -->
+
     <div class="container">
-        <form>
+        <form id='newForm'>
             <div class="row">
                 <div class="six columns">
-                    <label ><%=data[0].header1%></label>
-                    <input class="u-full-width" type="text" placeholder="<%=data[0].header1%>" >
+                    <label>
+                        <%=data[0].header1%>
+                    </label>
+                    <input class="u-full-width" type="text" placeholder="<%=data[0].header1%>" id="addtitle">
                 </div>
                 <div class="six columns">
-                    <label ><%=data[0].header2%></label>
-                    <input class="u-full-width " type="text" placeholder="<%=data[0].header2%>" >
+                    <label>
+                        <%=data[0].header2%>
+                    </label>
+                    <input class="u-full-width " type="text" placeholder="<%=data[0].header2%>" id="addbook">
                 </div>
             </div>
-            
 
-            <label ><%=data[0].header3%></label>
-            <textarea class="u-full-width" placeholder="<%=data[0].header3%>" ></textarea>
 
             <label>
-                <input  type="file" accept="image/jpeg,image/png">
+                <%=data[0].header3%>
+            </label>
+            <textarea class="u-full-width" placeholder="<%=data[0].header3%>" id="addtext"></textarea>
+
+            <label>
+                <input type="file" id="addfile" accept="image/jpeg,image/png">
                 <span class="label-body">Add only jpeg/png files</span>
 
             </label>
-            <input class="button-primary" type="submit" value="Submit">
+            <input class="button-primary" type="button" value="Submit" id="addsubmit">
         </form>
     </div>
-    <!-- Always wrap checkbox and radio inputs in a label and use a <span class="label-body"> inside of it -->
-
-    <!-- Note: The class .u-full-width is just a utility class shorthand for width: 100% -->
 </body>
+<script src="../JS/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </html>
