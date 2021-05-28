@@ -124,9 +124,10 @@ section {
 .block {
   background: ghostwhite;
   padding: 60px;
-  width: 820px;
+  /* width: 820px; */
   margin: 0 auto;
   text-align: justify;
+  
 }
 /* -------------------------------------------------------Our people------------------------------------------- */
 .back {
@@ -150,7 +151,8 @@ h5 {
 .row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .a > img {
@@ -307,7 +309,7 @@ h5 {
 }
 /*----------------------------------- search bar ends------------------------------- */
 
-/* --------------------------books--------------------------------------------------- */
+/* --------------------------groups--------------------------------------------------- */
 #books {
   color: white;
   justify-content: center;
@@ -325,4 +327,4 @@ h5 {
   background-color: rgb(95 29 29);
   height: 300px;
 }
-/* ------------------------------------------------Login/Join -------------------------------------------------*/
+
