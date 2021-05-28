@@ -29,7 +29,7 @@
 @media (max-width: 700px) {
   /*Ignores the first link (which is Home) in the div and       applies 'display = none' to everything else.   Basically hiding everything but Home*/
   .navBar a:not(:first-child) {
-    display: none;
+    /* display: none; */
   }
   /*Brings the menu icon into view and floats it to the right*/
   .navBar a.icon {
