@@ -1,12 +1,11 @@
 function deleteFunc() {
-    console.log("\n delete ", $('#bookId').val(), $('#code').val());
     if ($('#code').val() == '1') {
         let userData = {
 
             id: $('#bookId').val()
 
         }
-        console.log("book");
+        // console.log("book");
 
         Swal.fire({
             title: "Are you sure?",
@@ -93,9 +92,9 @@ function deleteFunc() {
 }
 
 function updateFunc() {
-    console.log("\n update ", $('#bookId').val(), $('#code').val());
+    // console.log("\n update ", $('#bookId').val(), $('#code').val());
     if ($('#code').val() == '1') {
-        console.log("update");
+        // console.log("update");
                 $.ajax({
                     type: "GET",
                     url: '/add/update_book/' + $('#bookId').val(),
@@ -115,7 +114,7 @@ function updateFunc() {
                 });
     }
     else {
-        console.log("author");
+        // console.log("author");
 
         let userData = {
 

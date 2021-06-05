@@ -42,7 +42,7 @@ $(document).ready(() => {
                 // dataType: 'json',
 
                 success: function (response) {
-                    console.log('respose', response)
+                    // console.log('respose', response)
                     if (response.status) {
                         location.replace("/")
                     } else {
@@ -69,7 +69,7 @@ $(document).ready(() => {
     var email = document.getElementById("em2");
     var user = document.getElementById("user1");
 
-    console.log(pass1, pass2, email, user);
+    // console.log(pass1, pass2, email, user);
 
     $("#button2").click(() => {
         if (pass1.value.trim() == "" || pass2.value.trim() == "" || email.value.trim() == "" || user.value.trim() == "") {
@@ -168,7 +168,7 @@ $(document).ready(() => {
 
 
     $("#addsubmit").click((event) => {
-        console.log('\n add submit')
+        // console.log('\n add submit')
         if (addtitle.value.trim() == "" || addbook.value.trim() == "" || addtext.value.trim() == "" || addfile.value.trim() == "") {
 
             addtitle.style.border = addtitle.value.trim() == "" ? "2px solid red" : '';
