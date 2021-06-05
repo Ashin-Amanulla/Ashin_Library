@@ -16,7 +16,7 @@ $(document).ready(() => {
 
 
 
-    $("#button1").click(() => {
+    $("#button1").click(() => { //signIn
         if (em.value.trim() == "" || pas.value.trim() == "") {
             Swal.fire({
                 icon: 'error',
@@ -29,25 +29,35 @@ $(document).ready(() => {
             return false;
         }
 
-        else if (regexp.test(em.value) == false) {
-            Swal.fire({
-                icon: 'warning',
-                title: 'Invalid Email !',
-                text: 'Ex: axxxx@gmail.com',
-            });
-            em.style.border = "2px solid red";
 
-            return false;
-
-        }
         else {
-            Swal.fire(
-                'Success!!',
-                'Welcome Admin!',
-                'success'
-            ).then(() => {
-                window.location.replace("/");
+            let user = {
+                username: em.value.trim(),
+                password: pas.value.trim()
+            }
+            $.ajax({
+                type: "POST",
+                url: '/login',
+                data: user,
+                // dataType: 'json',
+
+                success: function (response) {
+                    console.log('respose', response)
+                    if (response.status) {
+                        location.replace("/")
+                    } else {
+                        Swal.fire(
+                            'Warning!!',
+                            'User not found!',
+                            'error'
+                        )
+                    }
+                },
+                error: function (e) {
+                    console.log("ERROR: ", e);
+                }
             });
+
         }
 
 
@@ -116,15 +126,40 @@ $(document).ready(() => {
         }
 
         else {
-            Swal.fire(
-                'Success!!',
-                'Welcome to The Club!!',
-                'success'
-            ).then(() => {
-                window.location.replace("/");
-            });
+
+            let userData = {
+                Username: user.value.trim(),
+                Password: pass1.value.trim(),
+                Email: email.value.trim()
+            }
+            $.ajax({
+                type: "POST",
+                url: '/login/signup',
+                data: userData,
+                dataType: 'json',
+
+                success: function (response) {
+
+                    if (response.status) {
+                        location.replace("/")
+                    } else {
+                        Swal.fire(
+                            'Error!!',
+                            'No Welcome Admin!',
+                            'error'
+                        )
+                    }
+
+                },
+                error: function (e) {
+                    console.log("ERROR: ", e);
+                }
+
+            })
         }
     });
+
+    //-------add data---
 
     var addtitle = document.getElementById("addtitle");
     var addbook = document.getElementById("addbook");
@@ -133,6 +168,7 @@ $(document).ready(() => {
 
 
     $("#addsubmit").click((event) => {
+        console.log('\n add submit')
         if (addtitle.value.trim() == "" || addbook.value.trim() == "" || addtext.value.trim() == "" || addfile.value.trim() == "") {
 
             addtitle.style.border = addtitle.value.trim() == "" ? "2px solid red" : '';
@@ -160,8 +196,8 @@ $(document).ready(() => {
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire('Successfully added !!!', '', 'success')
-                    .then(function(){ 
-                        location.reload();
+                        .then(function () {
+                            location.replace("/") //return to authors
                         });
 
                 } else if (result.isDenied) {
@@ -171,6 +207,9 @@ $(document).ready(() => {
             })
         }
     });
-});
 
+
+
+
+});
 

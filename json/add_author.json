@@ -3,8 +3,10 @@
         {
             "title":"Add Author",
             "header1":"Author Title",
-            "header2":"Author's Book",
-            "header3":"Author Details"
+            "country":"Country",
+            "dob":"Date of Birth",
+            "text":"Author Details",
+            "FamousWorks":"Famous Works"
         }
     ]
 }

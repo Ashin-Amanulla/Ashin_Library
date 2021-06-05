@@ -3,8 +3,12 @@
         {
             "title":"Add Book",
             "header1":"Book Title",
-            "header2":"Book Author",
-            "header3":"Book Details"
+            "author":"Book Author",
+            "text":"Book Details",
+            "pageCount":"Page Counts",
+            "publishedDate":"Published Date",
+            "categories":"Genre",
+            "language":"Language"
         }
     ]
 }
