@@ -137,6 +137,15 @@
 }
 .btn1 {
   width: 200px;
+
+
+}
+
+.btn2 {
+  width: 200px;
+  background-color: rgb(117, 116, 116)!important;
+  color: white;
+  
 }
 
 .phone{
