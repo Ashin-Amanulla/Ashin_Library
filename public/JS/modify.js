@@ -6,7 +6,7 @@ function deleteFunc() {
 
         }
         // console.log("book");
-
+        console.log('role', localStorage.getItem("role"))
         Swal.fire({
             title: "Are you sure?",
             // type: "warning",
@@ -50,7 +50,7 @@ function deleteFunc() {
 
         let userData = {
 
-            id: $('#bookId').val()
+            id: $('#bookId').val(),
         }
         Swal.fire({
             title: "Are you sure?",
@@ -95,23 +95,23 @@ function updateFunc() {
     // console.log("\n update ", $('#bookId').val(), $('#code').val());
     if ($('#code').val() == '1') {
         // console.log("update");
-                $.ajax({
-                    type: "GET",
-                    url: '/add/update_book/' + $('#bookId').val(),
-                    // data: userData,
-                    dataType: 'json',
+        $.ajax({
+            type: "GET",
+            url: '/add/update_book/' + $('#bookId').val(),
+            // data: userData,
+            dataType: 'json',
 
-                    success: function (response) {
+            success: function (response) {
 
-                        if (response.status) {
-                            // location.replace("/group/books") //return to books
-                        }
-                    },
-                    error: function (e) {
-                        console.log("ERROR: ", e);
-                    }
+                if (response.status) {
+                    // location.replace("/group/books") //return to books
+                }
+            },
+            error: function (e) {
+                console.log("ERROR: ", e);
+            }
 
-                });
+        });
     }
     else {
         // console.log("author");

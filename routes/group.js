@@ -26,15 +26,15 @@ app.get('/books/:id', function (req, res) {
 app.post('/deletebook', function (req, res) {
 
     let id = req.body.id;
-    BookData.deleteOne({_id: id}, (err, result) => {
+    BookData.deleteOne({ _id: id }, (err, result) => {
         if (err) {
             res.send({ status: false, data: err });
-        } else{
+        } else {
 
-        
-        console.log(req.body)
-        res.send({ status: true });
-    }
+
+            console.log(req.body)
+            res.send({ status: true });
+        }
     });
 });
 
@@ -43,14 +43,14 @@ app.post('/deletebook', function (req, res) {
 app.post('/deleteauthor', function (req, res) {
 
     let id = req.body.id;
-    AuthorData.remove({_id: id}, (err, result) => {
+    AuthorData.remove({ _id: id }, (err, result) => {
         if (err) {
             res.send({ status: false, data: err });
         }
-        else{
-        
-        console.log(req.body)
-        res.send({ status: true });
+        else {
+
+            console.log(req.body)
+            res.send({ status: true });
         }
     });
 });

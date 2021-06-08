@@ -42,7 +42,6 @@ $(document).ready(() => {
                 // dataType: 'json',
 
                 success: function (response) {
-                    // console.log('respose', response)
                     if (response.status) {
                         location.replace("/")
                     } else {
