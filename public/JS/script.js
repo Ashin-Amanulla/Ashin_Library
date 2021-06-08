@@ -140,7 +140,10 @@ $(document).ready(() => {
                 success: function (response) {
 
                     if (response.status) {
-                        location.replace("/")
+                        Swal.fire('Successfully added !!!', '', 'success')
+                        .then(function () {
+                            location.replace("/") 
+                        });
                     } else {
                         Swal.fire(
                             'Error!!',
