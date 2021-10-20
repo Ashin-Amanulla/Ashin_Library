@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
 
-    console.log(req.body);
+    // console.log(req.body);
     let username = req.body.username;
     let password = req.body.password;
 
@@ -33,7 +33,7 @@ app.post('/', function (req, res) {
 
             }
             else if (user) {
-                console.log("user data", user)
+                // console.log("user data", user)
                 req.session.role = 'user';
                 res.send({ status: true });
             } else {

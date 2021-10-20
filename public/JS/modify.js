@@ -6,7 +6,7 @@ function deleteFunc() {
 
         }
         // console.log("book");
-        console.log('role', localStorage.getItem("role"))
+        // console.log('role', localStorage.getItem("role"))
         Swal.fire({
             title: "Are you sure?",
             // type: "warning",

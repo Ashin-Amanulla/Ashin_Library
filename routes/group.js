@@ -49,7 +49,7 @@ app.post('/deleteauthor', function (req, res) {
         }
         else {
 
-            console.log(req.body)
+            // console.log(req.body)
             res.send({ status: true });
         }
     });
